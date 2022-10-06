@@ -1,0 +1,22 @@
+﻿@model List<Person>
+@{
+    ViewData["Title"] = "AddForm";
+}
+
+<h1>Add Presentation</h1>
+<!--For some reason "Model" is Null. How do we add Values here?-->
+<form method="post" action="/presentation/add">
+    Name: 
+        <select name="person_id">
+        @foreach(Person p in Model) 
+        {
+            <option value="@p.Id">@p.FirstName @p.LastName</option>
+        }
+        </select><span style="color:red; font-weight:700">@ViewBag.IdMessage</span><br />
+    
+    Presentation Date: <input type="date" name="presentationdate" /><span style="color:red; font-weight:700">@ViewBag.PresentMessage</span><br />
+    Title: <input type="text" name="booktitle" /><span style="color:red; font-weight:700">@ViewBag.TitleMessage</span><br />
+    Author: <input type="text" name="bookauthor" /><span style="color:red; font-weight:700">@ViewBag.AuthorMessage</span><br />
+    Genre: <input type="text" name="genre" /><span style="color:red; font-weight:700">@ViewBag.GenreMessage</span><br />
+    <input type="submit" value="Save"/>
+</form>

@@ -1,0 +1,14 @@
+﻿
+@{
+    ViewData["Title"] = "AddForm";
+}
+
+<h1>Add a new Presentor</h1>
+
+<form method="post" action="/person/add">
+    @*ID: <input type="text" name="id" /><br />*@
+    First Name: <input type="text" name="firstname" /><span style="color:red; font-weight:bold">@ViewBag.FirstNameMessage</span><br />
+    Last Name: <input type="text" name="lastname" /><span style="color:red; font-weight:bold">@ViewBag.LastNameMessage</span><br />
+    Email: <input type="email" name="email" /><span style="color:red; font-weight:bold">@ViewBag.EmailMessage</span><br />
+    <input type="submit" value="Save"/>
+</form>

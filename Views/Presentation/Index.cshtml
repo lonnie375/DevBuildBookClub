@@ -1,0 +1,37 @@
+﻿@model List<Presentation>
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Presenation List</h1>
+
+<!--List of presentors-->
+<table>
+    <thead>
+        <tr>
+            <th>PresentationDate</th>
+            <th>Title</th>
+            <th>Author</th>
+            <th>Genre</th>
+        </tr>
+    </thead>
+    <tbody>
+
+        @foreach(Presentation p in Model)
+        {
+            <tr>
+                <td>@p.PresentationDate</td>
+                <td>@p.BookTitle</td>
+                <td>@p.BookAuthor</td>
+                <td>@p.Genre</td>
+                <td>
+                    <a href="/presentation/details/@p.Id">Detail</a>
+                    <a href="/presentation/editpresentation/@p.Id">Edit</a>
+                    <a href="/presentation/delete/@p.Id">Delete</a>
+                </td>
+
+            </tr>
+            
+        }
+    </tbody>
+</table><br />
